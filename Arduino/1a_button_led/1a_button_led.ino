@@ -1,9 +1,9 @@
 
-//In this code a switch is connected betweem Pin 2 and ground in pull-up mode
+//In this code a button is connected betweem Pin 2 and ground in pull-up mode
 //And an LED is connected between pin 8 and ground
-//When the switch is pressed, the LED should light up
+//When the button is pressed, the LED should light up
 
-// define switch and led pins
+// define button and led pins
 int pushButton = 2;
 int led = 8;
 
