@@ -35,7 +35,7 @@ void loop() {
   digitalWrite(red_led, LOW);
   digitalWrite(yellow_led, LOW);
   digitalWrite(green_led, HIGH);
-  Serial.println("Currents State : GO");
+  Serial.println("Current State : GO");
   delay(green_wait);
 
   // Turn on yellow and wait for 2s
@@ -49,6 +49,6 @@ void loop() {
   digitalWrite(red_led, HIGH);
   digitalWrite(yellow_led, LOW);
   digitalWrite(green_led, LOW);
-  Serial.println("Currents State : STOP");
+  Serial.println("Current State : STOP");
   delay(red_wait);
 }
