@@ -6,9 +6,12 @@ const float R_DIV = 10000.0;  // resistor used to create a voltage divider
 const float flatResistance = 12000.0; // resistance when flat
 const float bendResistance = 40000.0;  // resistance at 90 deg
 
+int led_pin = 3;
+
 void setup() {
   Serial.begin(9600);
   pinMode(flexPin, INPUT);
+  pinMode(led_pin, OUTPUT);
 }
 
 void loop() {
@@ -20,6 +23,10 @@ void loop() {
 
   // Use the calculated resistance to estimate the sensor's bend angle:
   float angle = map(Rflex, flatResistance, bendResistance, 0, 90.0);
+  if (Rflex > 30000)
+    digitalWrite(led_pin, HIGH);
+  else
+    digitalWrite(led_pin, LOW);
   Serial.println("Bend: " + String(angle) + " degrees");
   Serial.println();
 
